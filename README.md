@@ -152,3 +152,29 @@ Después de la configuración inicial, se ejecutaron los siguientes comandos de 
         - Defina el identificador único del paquete para el plugin (ej. `com.example.learnhelloworldcapacitor`).
     2. Cuando se le pregunte: `What should be the class name for your plugin?`
         - Defina el nombre de la clase principal del plugin (ej. `LearnHelloworldCapacitorPlugin
+
+
+#How to use in ionic APP 
+    ```
+import { Component, OnInit } from '@angular/core';
+import { LearnHelloworldCapacitorPlugin } from 'learn-helloworld-capacitor';
+
+@Component({
+  selector: 'app-tab1',
+  templateUrl: 'tab1.page.html',
+  styleUrls: ['tab1.page.scss'],
+})
+export class Tab1Page implements OnInit {
+  constructor() {
+    console.log('>>>>>>>>>>>>> edward iniciado app');
+  }
+  ngOnInit(): void {
+    LearnHelloworldCapacitorPlugin.echo({ value: 'edward' }).then(
+      (data: any) => {
+        console.log('>>>>>>>>>>>>> edward data desde plugin', data);
+      }
+    );
+  }
+}
+
+    ```
